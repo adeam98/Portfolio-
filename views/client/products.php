@@ -11,7 +11,7 @@ $selectedCategory = $_GET['category'] ?? '';
 $search = $_GET['search'] ?? '';
 $order = $_GET['order'] ?? '';
 
-$sql = "SELECT * FROM products WHERE 1=1"; 
+$sql = "SELECT * FROM products WHERE 1=1";  
 $params = [];
 
 if (!empty($selectedCategory)) {

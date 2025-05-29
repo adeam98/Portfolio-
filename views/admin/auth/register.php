@@ -49,7 +49,7 @@ $error = $_GET['error'] ?? '';
         .btn {
             width: 100%;
             padding: 0.75rem;
-            background-color: #28a745;
+            background-color:rgb(37, 9, 195);
             border: none;
             color: white;
             font-size: 1rem;
@@ -58,7 +58,7 @@ $error = $_GET['error'] ?? '';
             transition: background-color 0.2s;
         }
         .btn:hover {
-            background-color: #218838;
+            background-color:rgb(121, 105, 210);
         }
         .error {
             color: red;
