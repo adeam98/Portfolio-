@@ -14,9 +14,10 @@ class Authuser {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-        $stmt->execute([$name, $email, $hashedPassword]);
-
-        return true;
+        if($stmt->execute([$name, $email, $hashedPassword]))
+            return true;
+        else
+            return "Erreur lors de l'enregistrement. Veuillez réessayer.";
     }
 public static function registeradmin($name, $email, $password) {
         global $pdo;
@@ -30,9 +31,10 @@ public static function registeradmin($name, $email, $password) {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'admin')");
-        $stmt->execute([$name, $email, $hashedPassword]);
-
-        return true;
+       if( $stmt->execute([$name, $email, $hashedPassword]))
+            return true;
+        else
+            return "Erreur lors de l'enregistrement. Veuillez réessayer.";
     }
     public static function login($email, $password) {
         global $pdo;

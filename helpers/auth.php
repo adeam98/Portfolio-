@@ -22,6 +22,3 @@ function requireAdmin() {
         exit;
     }
 }
-//zid hado fkola page khassha auth
-//require_once '../../helpers/auth.php';
-//requireLogin();
